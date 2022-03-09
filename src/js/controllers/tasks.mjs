@@ -53,4 +53,5 @@ export function taskAddButtonClickHandler (event) {
     };
     addTask(newTask);
     updateTasksHTML(taskListHTMLSelector,getTasks());
+    document.getElementById("taskInput").value = "";
 }
