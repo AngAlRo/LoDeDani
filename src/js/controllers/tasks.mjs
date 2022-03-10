@@ -62,15 +62,20 @@ hideShow.addEventListener("click", (event) => {
 
 function checkclickhandler(hideShow) {
   const listaOcultar = document.querySelector(taskListHTMLSelector);
-  const tareahecha = listaOcultar.querySelectorAll(".completed");
-  console.log(tareahecha);
+  const tareaHecha = listaOcultar.querySelectorAll(".completed");
+  console.log(tareaHecha);
   console.log(listaOcultar.completed);
-
-  /// TODO
   if (hideShow.checked) {
-      }
-    tareahecha.classList.add(checkedCSSClass);
+    for (let item of tareaHecha) {
+      console.log(item);
+      item.className += " checked";
+    }
   } else {
-    listaOcultar.classList.remove(checkedCSSClass);
+    for (let item of tareaHecha) {
+      console.log(item);
+      item.className -= " checked";
+    }
   }
 }
+
+//TODO solo enseña y oculta una vez
