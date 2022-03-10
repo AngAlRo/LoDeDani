@@ -54,6 +54,7 @@ export function taskAddButtonClickHandler(event) {
   };
   addTask(newTask);
   updateTasksHTML(taskListHTMLSelector, getTasks());
+  document.getElementById("taskInput").value = "";
 }
 
 hideShow.addEventListener("click", (event) => {
@@ -65,17 +66,13 @@ function checkclickhandler(hideShow) {
   const tareaHecha = listaOcultar.querySelectorAll(".completed");
   console.log(tareaHecha);
   console.log(listaOcultar.completed);
-  if (hideShow.checked) {
-    for (let item of tareaHecha) {
-      console.log(item);
+
+  for (let item of tareaHecha) {
+    if (hideShow.checked == true) {
       item.className += " checked";
     }
-  } else {
-    for (let item of tareaHecha) {
-      console.log(item);
-      item.className -= " checked";
+    if (hideShow.checked == false) {
+      item.className += "li";
     }
   }
 }
-
-//TODO solo enseña y oculta una vez

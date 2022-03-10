@@ -1,7 +1,12 @@
 import { getTasks } from "./models/domainObjects.mjs";
-import { updateTasksHTML, taskAddButtonClickHandler } from "./controllers/tasks.mjs";
-import { taskListHTMLSelector, addTaskButtonSelector } from "./models/defines.mjs"
-
+import {
+  updateTasksHTML,
+  taskAddButtonClickHandler,
+} from "./controllers/tasks.mjs";
+import {
+  taskListHTMLSelector,
+  addTaskButtonSelector,
+} from "./models/defines.mjs";
 
 /**
  * Punto de entrada al programa.
@@ -9,34 +14,11 @@ import { taskListHTMLSelector, addTaskButtonSelector } from "./models/defines.mj
  * la ejecución se ve diferido al momento en que se
  * termine de cargar el documento HTML.
  */
-updateTasksHTML(taskListHTMLSelector,getTasks());
+updateTasksHTML(taskListHTMLSelector, getTasks());
 
-document.querySelector(
-    addTaskButtonSelector
-).addEventListener(
-    "click",
-    taskAddButtonClickHandler
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document
+  .querySelector(addTaskButtonSelector)
+  .addEventListener("click", taskAddButtonClickHandler);
 
 /*
 for ( let idx = 0 ; idx < tasks.length ; idx ++ ) {
